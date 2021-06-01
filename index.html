@@ -1,36 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>pandey's tutorials</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>file-sharing-app</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <section class="upload-container">
+   <div class="drop-zone">
 
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">pandey's tutorials</a>
+    <div class="icon-container">
+      <img src="file.svg" alt="file-icon" class="center" draggable="false">
+      <img src="file.svg" alt="file-icon"  class="right" draggable="false">
+      <img src="file.svg" alt="file-icon" class="left" draggable="false">
+
     </div>
-    <ul class="nav navbar-nav" margin-right:1600px >
-        <div class="dropdown" style='margin-right:16px'>
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown button
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </div>
-    </ul>
-  </div>
-</nav>
-  
+    <div class="title">DROP YOUR FILE HERE or , <span class="browsebtn">browse</span></div>
+   </div>
 
-
+  </section>
 </body>
+<script src="index.js"></script>
 </html>
