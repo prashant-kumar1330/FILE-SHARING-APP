@@ -1,4 +1,7 @@
-const dropzone =document.querySelector(".drop-zone");
-dropzone.addEventListener(drag, (e)=>{
-    console.write("dra")
-})
+
+document.getElementsByClassName(".drop-zone ").addEventListener(onclick,(e)=>{
+    console.log("hoja");
+});
+// dropZone.addEventListener(MouseEvent, (e)=>{
+//     console.log("drag")
+// })
