@@ -30,6 +30,7 @@ body {
     justify-content: center;
     display: flex;
     flex-direction: column;
+    transition: all .2s ease;
 }
 .icon-container{
     width: 75px;
@@ -39,7 +40,7 @@ body {
 .icon-container img{
     width: 75px;
     position: absolute;
-    transition: transform .250ms ease-in-out;
+    transition: transform 250ms ease-in-out;
 }
 .icon-container .center{
     z-index: 2;
@@ -55,6 +56,11 @@ body {
     filter: grayscale(.9);
  }
 
- .dragged .icon-container{
+ .dragged .icon-container .center{
      transform: translateY(-5px);
  }
+ .dragged.drop-zone{
+     background: var(--main-bg-color);
+     border-color: #2196f3;
+ }
+ 
