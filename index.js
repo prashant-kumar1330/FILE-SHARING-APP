@@ -6,6 +6,9 @@ const bgprogress = document.querySelector(".bg-progress");
 const percentContainer = document.querySelector(".percent-container");
 const progressbar= document.querySelector(".progress-bar")
 const progressContainer = document.querySelector(".progress-container");
+const fileurl= document.querySelector("#fileurl");
+const sharingContainer = document.querySelector(".sharing-container");
+const copybtn= document.querySelector(".iconify");
 dropZone.addEventListener("dragover",(e)=>{
     e.preventDefault();
     if(!dropZone.classList.contains("dragged")){
@@ -66,7 +69,13 @@ const updateProgress = (e)=>{
     progressbar.getElementsByClassName.transform= `scaleX(${precent/100})`
 }
 
-const showlink= (file)=>{
+const showlink= (file: url)=>{
     console.log()
     progressContainer.style.display="none";
+    sharingContainer.style.display="block";
+    fileurl.value=url;
 }
+copybtn.addEventListener("click",()=>{
+    fileurl.select();
+    document.execCommand("copy");
+})
