@@ -69,12 +69,12 @@ const updateProgress = (e)=>{
     progressbar.getElementsByClassName.transform= `scaleX(${precent/100})`
 }
 
-const showlink= (file: url)=>{
-    console.log()
-    progressContainer.style.display="none";
-    sharingContainer.style.display="block";
-    fileurl.value=url;
-}
+// const showlink= (file: //url)=>{
+//     console.log()
+//     progressContainer.style.display="none";
+//     sharingContainer.style.display="block";
+//     fileurl.value=url;
+// }
 copybtn.addEventListener("click",()=>{
     fileurl.select();
     document.execCommand("copy");
