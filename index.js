@@ -9,6 +9,11 @@ const progressContainer = document.querySelector(".progress-container");
 const fileurl= document.querySelector("#fileurl");
 const sharingContainer = document.querySelector(".sharing-container");
 const copybtn= document.querySelector(".iconify");
+const emailform = document.querySelector("#email-form")
+
+
+
+
 dropZone.addEventListener("dragover",(e)=>{
     e.preventDefault();
     if(!dropZone.classList.contains("dragged")){
@@ -17,7 +22,8 @@ dropZone.addEventListener("dragover",(e)=>{
     
 })
  const host= "https://innshare.herokuapp.com/"
- const uploadURL= `${host}api/file`;
+ const uploadURL= `${host}api/files`;
+ const emailurl =`${host}api/files/send`
 
 
 
@@ -78,4 +84,28 @@ const updateProgress = (e)=>{
 copybtn.addEventListener("click",()=>{
     fileurl.select();
     document.execCommand("copy");
+})
+
+emailform.addEventListener("submit",(e)=>{
+     e.preventDefault();
+     const url=(fileurl.value);
+     const formdata= {
+         uuid: url.split("/").splice(-1,1)[0],
+         emailTo: emailform.elements["to-email"].value,
+         emailFrom: emailform.elements["from-email"].value,
+
+     };
+
+    fetch(emailurl, {
+        method: "POST",
+        headers: {
+            "content-type": "application/json"
+        },
+        body: JSON.stringify(formdata)
+    })
+    .then(res=>res.json())
+    .then((data)=>{
+        console.log(data);
+    })
+
 })
