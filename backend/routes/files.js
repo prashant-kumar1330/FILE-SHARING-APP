@@ -8,7 +8,7 @@ const  APP_BASE_URL= "http://localhost:3000";
 let storage= multer.diskStorage({
     destination: (req, file, cb) => cb(null,'uploads/'),
     filename:(req,file,cb)=>{
-       const uniquename= `${Date.now()} - ${Math.round(Math.round() * 1E9)}${path.extname(file.originalname)}}`; 
+       const uniquename= `${Date.now()} - ${Math.round(Math.round() * 1E9)}${path.extname(file.originalname)}`; 
        cb(null,uniquename);
     }
 })
