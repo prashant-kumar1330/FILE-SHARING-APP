@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon server.js",
-    "start": "node server.js"
-    
+    "start": "node server.js",
+    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
   },
   "engines": {
     "node": "v12.4.0"
