@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const File= require('../models/file');
-const APP_BASE_URL= "http://localhost:3000";
+//const APP_BASE_URL= "http://localhost:3000";
 
 router.get('/:uuid',async (req, res)=>{
     try{
@@ -14,7 +14,7 @@ router.get('/:uuid',async (req, res)=>{
             uuid: file.uuid,
             fileName: file.filename,
             fileSize: file.size,
-            downloadLink: `${APP_BASE_URL}/files/download/${file.uuid}`
+            downloadLink: `${process.env.APP_BASE_URL}/files/download/${file.uuid}`
         })
     }catch(err){
         return res.render('download' , {error: "something went worng"});
