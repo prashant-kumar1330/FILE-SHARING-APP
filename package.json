@@ -5,7 +5,10 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon server.js",
-    "serve": "node server.js"
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "v12.4.0"
   },
   "dependencies": {
     "cors": "^2.8.5",
