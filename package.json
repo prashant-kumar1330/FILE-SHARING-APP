@@ -5,8 +5,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon server.js",
-    "start": "node server.js",
-   
+    "start": "node server.js"
+    
+  },
   "engines": {
     "node": "v12.4.0"
   },
