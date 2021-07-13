@@ -1,7 +1,7 @@
 const express = require('express');
-require('dotenv').config();
-const app= express();
 const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, './.env') });
+const app= express();
 require('dotenv').config();
 const cors = require('cors');
 const corsOptions = {
