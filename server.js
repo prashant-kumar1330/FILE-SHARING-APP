@@ -26,7 +26,7 @@ connectDB();
 //     "preflightContinue": false,
 //     "optionsSuccessStatus": 204
 //   }
-
+  
 
 app.use(express.static('public'));
 app.set('views', path.join(__dirname,'/views'));
