@@ -19,7 +19,7 @@ connectDB();
 
 // Cors 
 
-
+  
 // Default configuration looks like
 // {
 //     "origin": "*",
