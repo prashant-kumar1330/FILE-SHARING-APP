@@ -7,7 +7,7 @@ require('dotenv').config();
 const cors = require('cors');
 const corsOptions = {
     origin:  process.env.ALLOWED_CLIENTS.split(',')
-    // ['http://localhost:3000', 'http://localhost:5000', 'http://localhost:3300']
+    // ['http://localhost:3000', 'http://localhost:5500', 'http://localhost:3300']
   }
 app.use(cors(corsOptions))
 app.use(express.static('public'));
@@ -39,7 +39,7 @@ app.use('/api/files',require('./routes/files'));
 
 app.use('/file', require('./routes/show'));
 app.use('/files/download',require('./routes/download'));
-
+ 
    app.listen(PORT,()=>{
       console.log(`listeing on port ${PORT}`);
   })
