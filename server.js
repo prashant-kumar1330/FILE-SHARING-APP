@@ -37,7 +37,7 @@ app.get('/',(req,res)=>{
 })
 app.use('/api/files',require('./routes/files')); 
 
-app.use('/file', require('./routes/show'));
+app.use('/files', require('./routes/show'));
 app.use('/files/download',require('./routes/download'));
  
    app.listen(PORT,()=>{
