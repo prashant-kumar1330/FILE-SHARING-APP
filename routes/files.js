@@ -82,7 +82,7 @@ router.post('/', (req, res)=>{
           text: `${emailFrom} shared a file with you.`,
           html: require('../services/emailtemplate')({
                     emailFrom, 
-                    downloadLink: `${process.env.APP_BASE_URL}/file/${file.uuid}` ,
+                    downloadLink: `${process.env.APP_BASE_URL}/files/${file.uuid}` ,
                     size: parseInt(file.size/1000) + ' KB',
                     expires: '24 hours'
                 })
