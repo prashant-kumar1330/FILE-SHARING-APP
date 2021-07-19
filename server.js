@@ -1,5 +1,5 @@
 const express = require('express');
-const mongoose= require('mongoose');
+// const mongoose= require('mongoose');
 const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, './.env') });
 const app= express();
@@ -14,8 +14,8 @@ app.use(express.static('public'));
 const PORT= process.env.PORT || 3000;
 app.use(express.static('public'));
 app.use(express.json());
-// const connectDB = require('./config/db');
-// connectDB();
+const connectDB = require('./config/db');
+connectDB();
 
 // Cors 
 
@@ -40,16 +40,17 @@ app.use('/api/files',require('./routes/files'));
 app.use('/file', require('./routes/show'));
 app.use('/files/download',require('./routes/download'));
 
-  //database connection
-  mongoose.connect(process.env.MONGO_CONNECTION_URL , { useNewUrlParser: true,useCreateIndex:true, useUnifiedTopology: true, useFindAndModify : true})
-   .then(()=>{
-    app.listen(PORT,()=>{
+   app.listen(PORT,()=>{
       console.log(`listeing on port ${PORT}`);
-  }) 
-   }) 
-   .catch(err=>{
-    console.log("db not connected")
-   })
+  })
+  //database connection
+  // mongoose.connect(process.env.MONGO_CONNECTION_URL , { useNewUrlParser: true,useCreateIndex:true, useUnifiedTopology: true, useFindAndModify : true})
+  //  .then(()=>{
+  
+  //  }) 
+  //  .catch(err=>{
+  //   console.log("db not connected")
+  //  })
 
            
   
