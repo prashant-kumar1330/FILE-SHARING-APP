@@ -31,7 +31,9 @@ connectDB();
 app.use(express.static('public'));
 app.set('views', path.join(__dirname,'/views'));
 app.set('view engine' ,'ejs');
-
+app.get('/',(req,res)=>{
+  return res.send("working");
+})
 app.use('/api/files',require('./routes/files')); 
 
 app.use('/file', require('./routes/show'));
